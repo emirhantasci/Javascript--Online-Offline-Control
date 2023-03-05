@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <title>Offline-Online Kontrol</title>
+    <style>
+        div.fixed{
+            display: none;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 570px;
+            height: 80px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="fixed" id="connection">
+        <div class="alert alert-danger" role="alert">
+            <p class="ml-2" style="font-size:18px;">
+                <img src="loading.gif" alt="" width="5%" class="mr-5">
+                Bağlantınız kesildi. Lütfne internet bağlantınızı kontrol ediniz.
+            </p>
+        </div>
+    </div>
+    <div class="container">
+        <p class="muted">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius voluptas officia molestiae nisi debitis provident quas rem eum at, deserunt non, est accusamus aut distinctio sequi ducimus nam incidunt ab. Voluptatem inventore sunt ratione explicabo neque atque dolores facilis veniam.
+        </p>
+    </div>
+
+    
+
+    <script>
+        const connection = document.getElementById("connection");
+        console.log(connection)
+        window.addEventListener('online', () => {
+            console.log("Kullanıcı online")
+            connection.style.display = "none";
+        });
+
+        window.addEventListener("offline", ()=>{
+            console.log("Kullanıcı offline")
+            connection.style.display="block";
+        })
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+ 
+</body>
+</html>
